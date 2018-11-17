@@ -79,13 +79,13 @@ Swift 3，iOS 10，Xcode 8
 
 点击左下角的**+**按钮，选择菜单中的**New Unit Test Target**...
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/TestNavigator1.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/TestNavigator1.png)
 
 
 
 使用默认的名字：**BullsEyeTests**。看到*test bundle*时，点击打开。如果BullsEyeTest没有出现，单击切换到其他navigators，再返回test navagator。
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/TestNavigator2.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/TestNavigator2.png)
 
 
 
@@ -97,7 +97,7 @@ Swift 3，iOS 10，Xcode 8
 2. 点击test navigator中的小箭头按钮。
 3. 点击gutter中的菱形按钮。（就是显示代码行数旁边的按钮——译者）
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/TestNavigator3.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/TestNavigator3.png)
 
 
 
@@ -107,7 +107,7 @@ Swift 3，iOS 10，Xcode 8
 
 所有测试跑完之后，菱形按钮变成绿色，并呈现勾选状态。点击`testPerformanceExample()`方法下面的灰色菱形按钮，打开Performance Result：
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/TestNavigator4.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/TestNavigator4.png)
 
 
 
@@ -184,7 +184,7 @@ func testScoreIsComputed() {
 
 > Note：如果要看**XCTestAssertions**的完整列表，在代码中按Command键同时点击XCTAssertEqual 打开XCTestAssertions.h，或者到这里看： [Apple’s Assertions Listed by Category](https://developer.apple.com/library/prerelease/content/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/04-writing_tests.html#//apple_ref/doc/uid/TP40014132-CH4-SW35).
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/givenWhenThen.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/givenWhenThen.png)
 
 > Note：Given-When-Then 结构起源于Behavior Driven Development（BDD/行为驱动开发），而Given-When-Then 这个名字更通俗易懂。也可以用Arrange-Act-Assert，或者Assembl-Activate-Assert。
 
@@ -215,19 +215,19 @@ func testScoreIsComputedWhenGuessLTTarget() {
 
 打开breakpoint navigator，添加一个**Test Failure Breakpoint**；当测试方法发出失败的assertion（断言）时，测试就会停在这里。
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/AddTestFailureBreakpoint.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/AddTestFailureBreakpoint.png)
 
 把测试跑起来：测试失败，应该会停在`XCTAssertEqual`这行。
 
 打开debug console，检查`gameUnderTest`和`guess`的值：
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/TestFailure.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/TestFailure.png)
 
 `guess`的值是`targetValue - 5` ，但是`scoreRound`是105，并不是期待中的95！
 
 为了进一步找到问题点，使用平常的debug方式：在**when**语句中设置断点，在**BullsEyeGame.swift**中的`check(_:)`方法内，创建`difference`的地方也设置一个断点。然后再跑一次，逐步执行，来到`let difference `语句，查看`difference`的值：
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/DebugConsole.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/DebugConsole.png)
 
 问题出在`difference`的值是负数，所以score的值变成*100 - (-5)*；可以对diffenecne取*绝对值*来修复这个问题。在`check(_:)`方法中，取消注释正确的那行，并删除有问题的那行。
 
@@ -367,7 +367,7 @@ func testCallToiTunesCompletes() {
 
 当你的代码依赖到系统或库对象，就可以用这种伪造的方式——创建一个假对象喂入数据来进行这一部分的测试。[Dependency Injection by Jon Reid](https://www.objc.io/issues/15-testing/dependency-injection/) 中描述了几种可行的方法。
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/fake-433x320.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/fake-433x320.png)
 
 
 
@@ -569,7 +569,7 @@ app.launch()
 
 在`testGameStyleSwitch()`中另起一行，然后点击deitor窗口底部的红色**Record**按钮：
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/UITest.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/UITest.png)
 
 当app出现在模拟器后，点击游戏模式切换开关的**Slider** segment，还有顶部的label。然后点击Xcode Record按钮停止记录。
 
@@ -650,7 +650,7 @@ func test_StartDownload_Performance() {
 
 跑起来，然后点击出现在`measure()`闭包尾部的图标，查看统计信息。
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/PerformanceResult-650x228.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/PerformanceResult-650x228.png)
 
 点击**Set BaseLine**，再次执行performance test——结果可能比baseline更好或者更差。**Edit**按钮可以将最新的值重设为baseline。
 
@@ -668,21 +668,21 @@ Code coverage工具，可以帮忙检查哪些代码已经跑过测试，哪些�
 
 要启用code coverage，编辑scheme的**Test**，并勾选**Code Coverage**复选框（Xcode 9 是在**Options**中勾选——译者）：
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/CodeCoverageSwitch.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/CodeCoverageSwitch.png)
 
 把所有测试都跑起来（Command-U），然后打开reports navigator（Command-8）。选择**By Time**，选中列表中最上面一个，再选择**Coverage**这个tab（Xcode 9 点击左边的**{} Coverage**）：
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/CoverageReport1-650x189.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/CoverageReport1-650x189.png)
 
 点击**SearchViewController.swift**左边的三角形，查看方法列表：
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/CoverageReport2-650x252.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/CoverageReport2-650x252.png)
 
 将鼠标悬停在`updateSearchResults(_:)`方法旁的蓝色Coverage bar上，可以看到覆盖率是71.88%。
 
 点击方法右边的箭头按钮，打开这个方法的源文件，找到这个方法。鼠标悬停在右侧边栏的coverage annotations，这部分代码就会高亮成绿色或者红色。
 
-![](/Users/Antony/Library/Mobile Documents/com~apple~CloudDocs/工作学习/2018文章/Translation/iOS Unit Testing and UI Testing Tutorial/CoverageReport4-650x436.png)
+![](https://raw.githubusercontent.com/Antony138/MarkdownPhotos/master/photos/2018articlesPhotos/iOSTestTutorial/CoverageReport4-650x436.png)
 
 coverage annotations还显示了每部分代码在一次测试中的执行次数；没有被执行的部分高亮为红色。如你所愿，for循环跑了3次，而错误的分支，没有被执行。如果要提高这个方法的覆盖率，可以复制一份**abbaData.json**，修改其中的内容，就可以导致不同的错误——比如，将把key `"results"`改为`"result"`，跑测试的时候，就会执行`print("Results key not found in dictionary")`这个分支。
 
